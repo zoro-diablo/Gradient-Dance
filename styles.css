@@ -1,0 +1,153 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --border: rgba(224, 212, 220, 0.4) 0px 5px, rgba(238, 232, 236, 0.3) 0px 10px, rgba(227, 218, 223, 0.2) 0px 15px, rgba(223, 213, 219, 0.1) 0px 20px, rgba(233, 218, 228, 0.05) 0px 25px;
+    --border2: rgba(19, 230, 181, 0.4) 0px 5px, rgba(24, 248, 233, 0.3) 0px 10px, rgba(17, 202, 215, 0.2) 0px 15px, rgba(20, 225, 233, 0.1) 0px 20px, rgba(18, 215, 230, 0.05) 0px 25px;
+}
+
+
+body{
+    background: linear-gradient(to right,white, #d6cccc, #000000,black);
+    background-position: left;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    font-size: 1.1rem;
+    background-size: 400%;
+    animation: backani 10s infinite alternate;
+}
+
+@keyframes backani{
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 20px;
+    margin: 30px;
+    justify-content: space-around;
+    margin-top: 100px;
+    
+}
+
+.box{
+    
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 100px;
+    margin-top: 150px;
+    backdrop-filter: blur(40px);
+    transition: transform 1s ease-in-out;
+}
+
+.image{
+    display: grid;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px 20px 0px 0px;
+    border: 2px solid white;
+       
+}
+
+.one > .image{
+    background-image: linear-gradient(red,orange,yellow,green,blue,indigo,violet);
+}
+.two > .image{
+    background-image: conic-gradient(red,orange,yellow,green,blue,indigo,violet,red);
+}
+.three > .image{
+    background-image: radial-gradient(red,orange,yellow,green,blue,indigo,violet);
+}
+.four > .image{
+    background-image:linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+}
+.five > .image{
+    background-image:linear-gradient(to left,red,orange,yellow,green,blue,indigo,violet);
+}
+
+.details{
+    text-align: center;
+    padding: 30px 30px 30px 30px;
+    background-image: linear-gradient(to left,red,orange,yellow,green,blue,indigo,violet);
+    font-family: 'Basic', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    height: 90px;
+    background-size: 500%;
+    animation: textani 10s infinite alternate;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    border: 2px solid white;
+    box-shadow: var(--border);
+    backdrop-filter: blur(40px);
+    border-radius: 0 0 10px 10px;
+}
+
+@keyframes textani{
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+.details > p{
+    line-height: 20px;
+}
+
+.box:hover{
+    transform: scale(1.07);
+}
+
+.box:hover .details{
+    box-shadow: var(--border2);
+}
+
+
+body::before{
+    content: 'GRADIENT';
+    position: absolute;
+    left: 35%;
+    top:5%;
+    font-size: 100px;
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    color:transparent;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
+    font-weight: bold;
+    background-image: linear-gradient(to left,white, #d6cccc, #000000,black);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 400%;
+    background-position: right;
+    animation: headinganii 10s infinite alternate;
+    text-shadow: 1px 1px 2px rgba(100, 102, 102, 0.115);
+}
+
+@keyframes headinganii{
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
